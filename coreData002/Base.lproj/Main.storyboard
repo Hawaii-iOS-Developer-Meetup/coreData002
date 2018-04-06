@@ -32,11 +32,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ejH-Sh-hot"/>
+                    <navigationItem key="navigationItem" id="ejH-Sh-hot">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ozN-W2-lAs"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079.2" y="132.68365817091455"/>
+            <point key="canvasLocation" x="841" y="-564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QCG-K2-5fZ">
