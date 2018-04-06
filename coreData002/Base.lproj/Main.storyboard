@@ -17,7 +17,19 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tor-ZL-UaP">
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tor-ZL-UaP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5v6-ln-3pa"/>
+                            <constraint firstItem="tor-ZL-UaP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PnD-St-DkG"/>
+                            <constraint firstItem="tor-ZL-UaP" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="TL6-CD-qhU"/>
+                            <constraint firstItem="tor-ZL-UaP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bh7-Mx-qfB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ejH-Sh-hot"/>
@@ -31,8 +43,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sCx-vt-tBX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6C6-Uq-oE2">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="6C6-Uq-oE2">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
