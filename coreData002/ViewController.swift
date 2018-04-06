@@ -6,6 +6,9 @@
 //  Copyright © 2018 Vision Runner. All rights reserved.
 //
 
+
+// source: https://www.raywenderlich.com/173972/getting-started-with-core-data-tutorial-2
+
 import UIKit
 import CoreData
 
@@ -47,6 +50,27 @@ class ViewController: UIViewController {
         // set up the cell
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //1
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        //2
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Person")
+        
+        //3
+        do {
+            people = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -55,30 +79,27 @@ class ViewController: UIViewController {
 
     func save(name: String) {
         
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                 return
         }
         
         // 1
-        let managedContext =
-            appDelegate.persistentContainer.viewContext
+        let managedContext = appDelegate.persistentContainer.viewContext
         
         // 2
-        let entity =
-            NSEntityDescription.entity(forEntityName: "Person",
-                                       in: managedContext)!
+        let entity = NSEntityDescription.entity(forEntityName: "Person", in: managedContext)!
         
-        let person = NSManagedObject(entity: entity,
-                                     insertInto: managedContext)
+        let person = NSManagedObject(entity: entity, insertInto: managedContext)
         
         // 3
         person.setValue(name, forKeyPath: "name")
         
         // 4
         do {
-            try managedContext.save()
-            people.append(person)
+            try managedContext.save() // this saves it to core data
+            people.append(person) // appends that name to the array.
+            // If you don't do this, your data will be in core data
+            // but it will not show up in the GUI
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
@@ -103,9 +124,10 @@ extension ViewController: UITableViewDataSource {
 }
 
 //TODO: Talk about KVC
+// talk on memoization
 
-
-
+// how do we inspect the data in core data from within xcode
+// is there any kind of gui to view the data?
 
 
 
