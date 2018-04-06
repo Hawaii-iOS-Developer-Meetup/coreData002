@@ -36,7 +36,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ejH-Sh-hot">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ozN-W2-lAs"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ozN-W2-lAs">
+                            <connections>
+                                <action selector="addPressed:" destination="BYZ-38-t0r" id="8HN-O4-QTA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="tor-ZL-UaP" id="eaN-pj-U81"/>
