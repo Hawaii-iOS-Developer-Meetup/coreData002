@@ -38,6 +38,9 @@
                     <navigationItem key="navigationItem" id="ejH-Sh-hot">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ozN-W2-lAs"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="tor-ZL-UaP" id="eaN-pj-U81"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
